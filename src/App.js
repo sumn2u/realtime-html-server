@@ -16,57 +16,48 @@ class App extends Component {
     this.onEditorChange = this.onEditorChange.bind(this)
   }
 
-   onEditorChange(newValue) {
-     ReactDOM.findDOMNode(this.myRef.current).innerHTML = newValue
+  onEditorChange(newValue) {
+    ReactDOM.findDOMNode(this.myRef.current).innerHTML = newValue
   }
 
- render() {
-  return (
-    <div className="App">
+  render() {
+    return (
+      <div className="App">
         <div className="flex-split">
-      <div className="flex-split-left">
-        {/* <div className="flex-split-image"> */}
-          <AceEditor
-            mode="html"
-            theme="monokai"
-            name="awesome-code"
-            height= {"100%"}
-            width={"100%"}
-            ref="aceEditor"
-            onChange={this.onEditorChange}
-            fontSize={14}
-            showPrintMargin={true}
-            focus={true}
-            editorProps={{ $blockScrolling: true }}
-            wrapEnabled= {true}
-            highlightActiveLine={true}
-            autoScrollEditorIntoView ={true}
-            value={``}
-            setOptions={{
-              enableBasicAutocompletion: true,
-              enableLiveAutocompletion: true,
-              enableSnippets: true,
-              showLineNumbers: true,
-              tabSize: 2,
-              showGutter: true
-            }}/>
-        {/* </div> */}
-  
-      </div>
+          <div className="flex-split-left">
+              <AceEditor
+                mode="html"
+                theme="monokai"
+                name="awesome-code"
+                height= {"100%"}
+                width={"100%"}
+                ref="aceEditor"
+                onChange={this.onEditorChange}
+                fontSize={14}
+                showPrintMargin={true}
+                focus={true}
+                editorProps={{ $blockScrolling: true }}
+                wrapEnabled= {true}
+                highlightActiveLine={true}
+                autoScrollEditorIntoView ={true}
+                value={``}
+                setOptions={{
+                  enableBasicAutocompletion: true,
+                  enableLiveAutocompletion: true,
+                  enableSnippets: true,
+                  showLineNumbers: true,
+                  tabSize: 2,
+                  showGutter: true
+                }}/>
+          </div>
 
-      <div className="flex-split-right">
-       
-        {/* <div className="right-header"> */}
-          <div ref={this.myRef} /> 
-        {/* </div> */}
+          <div className="flex-split-right">
+              <div ref={this.myRef} /> 
+          </div>
+        </div>
       </div>
-    </div>
-
-      
-      
-    </div>
-  );
-}
+    );
+  }
 }
 
 export default App;

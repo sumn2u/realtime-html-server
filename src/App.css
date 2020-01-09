@@ -21,14 +21,6 @@
 }
 
 
-.flex-split-image {
-  align-self: center;
-  height: 90px;
-  width: auto;
-  margin-bottom: 2em;
-  margin-top: 2em
-}
-
 .flex-split-left a {
   text-decoration: overline;
   color: white;
